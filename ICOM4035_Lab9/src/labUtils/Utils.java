@@ -76,10 +76,48 @@ public class Utils {
 		LinkedBinaryTree<Integer> t = new LinkedBinaryTree<>(); 
 		// ADD CODE AS SPECIFIED IN EXERCISE 2
 		
-		//add root
-		t.addRoot(4);
+		Position<Integer> r,q;
 		
-		//add left children
+		r= t.addRoot(4);
+		
+		//add left child
+		r = t.addLeft(r, 9);
+		
+		//add left
+		t.addLeft(r,7);
+		
+		//add right
+		t.addRight(r,10);
+		
+		//get root
+		r = t.root();
+		//add right child to root
+		r = t.addRight(r, 20);
+		
+		//add left
+		q = t.addLeft(r, 15);
+		
+		//add left 
+		t.addLeft(q, 12);
+		
+		//add right
+		q = t.addRight(q, 17);
+		
+		//add left to last node
+		t.addLeft(q, 19);
+		
+		//add right child to root's right child
+		r = t.addRight(r, 21);
+		
+		//add right child
+		r = t.addRight(r, 40);
+		
+		//add left child
+		t.addLeft(r, 30);
+		
+		//add right child
+		t.addRight(r, 45);
+		
 		
 		
 		

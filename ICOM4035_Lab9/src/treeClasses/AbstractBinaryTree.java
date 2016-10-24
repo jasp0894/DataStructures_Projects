@@ -55,14 +55,32 @@ public abstract class AbstractBinaryTree<E> extends AbstractTree<E> implements
 	
 
 	
-	// The following part has to do with Exercise 3. 
-	/**
-	protected void recDisplay(Position<E> r, 
-			int[] control, int level) 
+	//The following part has to do with Exercise 3. 
+	
+	protected void recDisplay(Position<E> root, int[] control, int level) 
 	{
 		// ADD CODE to override this method as specified in Exercise 3
+		printPrefix(level, control);                                     //
+		System.out.println();                                            //
+		printPrefix(level, control);  
+		if(this.isRoot(root)){
+		System.out.println("__ROOT("+root.getElement()+")");  
+		}else if(control[level]==2) //the previous root has two children, 
+		//so the first one to print is the left
+			System.out.println("__L("+root.getElement()+")");
+		else if(control[level] ==1 && !this.hasRight(parent(root)))
+			//the previous root has one child and is at the left
+			System.out.println("__L("+root.getElement()+")");
+		else //the previous root has one child at the right
+			System.out.println("__R("+root.getElement()+")");
+		control[level]--;                                                //
+		int nc = this.numChildren(root);                                 //
+		control[level+1] = nc;                                           //
+		for (Position<E>  p : this.children(root)) { 
+			recDisplay(p, control, level+1);                             //
+		}                              
 	}
-	**/
+	
 
 
 	// The following part has to do with Exercise 5.
