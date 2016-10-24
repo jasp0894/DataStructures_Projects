@@ -113,10 +113,18 @@ public class LinkedTree<E> extends AbstractTree<E> implements Cloneable {
 				root.setParent(null);
 			}
 		else { 
+			
+			
 			for (Node<E> childNTD : ntd.children) { 
-				parent.getChildren().add(childNTD);   
-				// Exercise: why can't we use addChild method here????
-				childNTD.setParent(parent); 
+				ArrayList<Node<E>> siblingsOfNTD = ntd.getParent().getChildren();
+				parent.getChildren().add(childNTD); //add the children of the node to be removed to parent's children list
+				// Exercise: why can't we use addChild method here???? getChildren return an arraylist 
+				//which does not have the addChild method
+				childNTD.setParent(ntd.getParent()); //the parent of all ndt's children will be the parent of ntd.
+				
+				//remove ntd from its parent's children list
+				siblingsOfNTD.remove(ntd);
+				
 			}	
 		}
 		

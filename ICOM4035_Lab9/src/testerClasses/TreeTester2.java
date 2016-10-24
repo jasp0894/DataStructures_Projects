@@ -14,12 +14,13 @@ public class TreeTester2 {
 		Position<String> p = t.addRoot("ROOT"); 	
 		t.addChild(p, "Rosa"); 
 		p = t.addChild(p, "Maria"); 
-		Position<String> ptd = p;     // saved for future test of remove
+		Position<String> ptd1 = p;     // saved for future test of remove
 		Position<String> p1 = t.addChild(p, "Juana"); 
 		p1 = t.addChild(p1, "Lola"); 
 		t.addChild(p1, "Pepote"); 
 		p1 = t.addChild(p1, "Manolo"); 
 		p1=t.addChild(p1, "Eligio"); 
+		Position<String> ptd2 = p1;     // saved for future test of remove
 		t.addChild(p1, "Eda"); 
 		t.addChild(p1, "Deborah"); 
 		p1 = t.addChild(p, "Pergamino"); 
@@ -40,10 +41,14 @@ public class TreeTester2 {
 		t1 = t.clone(); 
 		Utils.displayTree("Clone of t", t1); 
 		
-		String removedElement = t.remove(ptd);
+		String removedElement = t.remove(ptd1);
 		Utils.displayTree("Tree t after removing " + removedElement, t);
 		Utils.displayTree("Clone of t", t1); 
 
+		
+
+		String removedElement2 = t.remove(ptd2);
+		Utils.displayTree("Tree t after removing " + removedElement2, t);
 	}
 
 }

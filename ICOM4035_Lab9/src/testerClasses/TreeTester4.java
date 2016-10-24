@@ -15,6 +15,10 @@ public class TreeTester4 {
 		
 		// display elements as a list
 		Utils.displayTreeElements("The elements of the tree are: ", t);
+		//the traversal is in order. It is so because, the fillIterable method has been 
+		//overwritten, so the JVM will not call the original one. 
+		
+		//The super class method would be called if the comments are placed again.
 		
 	}
 
