@@ -12,6 +12,9 @@ public class ExampleTreeBuilder1 {
 
 		// display content as a tree
 		Utils.displayTree("The tree is: ", t); 
+		
+		//For exercise 3: the content will not change because the original recDisplay inside
+		//AbstractTree will be used.
 	}
 
 }

@@ -18,6 +18,9 @@ public class TreeTester3 {
 		LinkedTree<Integer> t2 = Utils.buildExampleTreeAsLinkedTree(); 
 		Utils.displayTree("Same tree as a general tree is: ", t2); 
 		
+		
+		//The representations are different because the first one will use the overwritten method done in exercise 3 and the last one 
+		//will use the original method to display the tree content
 	}
 
 }
