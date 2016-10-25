@@ -27,6 +27,11 @@ public class TreeTester6 {
 		// display elements as a list
 		Utils.displayTreeElements("The elements of the tree are: ", t);
 		
+		//*****Exercise 6 -> If the insert method is modified to change the direction of
+		//the comparison then the tree will have the greatest numbers at its left and the smallest ones
+		//at its right. 
+		
+		//the tree list is now in decreasing order. The traversal is  in order.
 	}
 
 }
